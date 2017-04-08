@@ -1,0 +1,27 @@
+E:\VisualStudio\Connect4\Connect4\bin\Debug\Connect4.exe.config
+E:\VisualStudio\Connect4\Connect4\bin\Debug\Connect4.exe
+E:\VisualStudio\Connect4\Connect4\bin\Debug\Connect4.pdb
+E:\VisualStudio\Connect4\Connect4\obj\Debug\Connect4.csprojResolveAssemblyReference.cache
+E:\VisualStudio\Connect4\Connect4\obj\Debug\Connect4.Form1.resources
+E:\VisualStudio\Connect4\Connect4\obj\Debug\Connect4.Properties.Resources.resources
+E:\VisualStudio\Connect4\Connect4\obj\Debug\Connect4.csproj.GenerateResource.Cache
+E:\VisualStudio\Connect4\Connect4\obj\Debug\Connect4.exe
+E:\VisualStudio\Connect4\Connect4\obj\Debug\Connect4.pdb
+C:\Users\Zygis\Google Drive\Remontas\VisualStudio\Connect4\Connect4\bin\Debug\Connect4.exe.config
+C:\Users\Zygis\Google Drive\Remontas\VisualStudio\Connect4\Connect4\obj\Debug\Connect4.exe
+C:\Users\Zygis\Google Drive\Remontas\VisualStudio\Connect4\Connect4\obj\Debug\Connect4.pdb
+C:\Users\Zygis\Google Drive\Remontas\VisualStudio\Connect4\Connect4\bin\Debug\Connect4.exe
+C:\Users\Zygis\Google Drive\Remontas\VisualStudio\Connect4\Connect4\bin\Debug\Connect4.pdb
+C:\Users\Zygis\Google Drive\Remontas\VisualStudio\Connect4\Connect4\obj\Debug\Connect4.csprojResolveAssemblyReference.cache
+C:\Users\Zygis\Google Drive\Remontas\VisualStudio\Connect4\Connect4\obj\Debug\Connect4.Form1.resources
+C:\Users\Zygis\Google Drive\Remontas\VisualStudio\Connect4\Connect4\obj\Debug\Connect4.Properties.Resources.resources
+C:\Users\Zygis\Google Drive\Remontas\VisualStudio\Connect4\Connect4\obj\Debug\Connect4.csproj.GenerateResource.Cache
+C:\Users\Žygimantas\Desktop\Connect4Dabartinis\Connect4\bin\Debug\Connect4.exe.config
+C:\Users\Žygimantas\Desktop\Connect4Dabartinis\Connect4\bin\Debug\Connect4.exe
+C:\Users\Žygimantas\Desktop\Connect4Dabartinis\Connect4\bin\Debug\Connect4.pdb
+C:\Users\Žygimantas\Desktop\Connect4Dabartinis\Connect4\obj\Debug\Connect4.csprojResolveAssemblyReference.cache
+C:\Users\Žygimantas\Desktop\Connect4Dabartinis\Connect4\obj\Debug\Connect4.Properties.Resources.resources
+C:\Users\Žygimantas\Desktop\Connect4Dabartinis\Connect4\obj\Debug\Connect4.csproj.GenerateResource.Cache
+C:\Users\Žygimantas\Desktop\Connect4Dabartinis\Connect4\obj\Debug\Connect4.exe
+C:\Users\Žygimantas\Desktop\Connect4Dabartinis\Connect4\obj\Debug\Connect4.pdb
+C:\Users\Žygimantas\Desktop\Connect4Dabartinis\Connect4\obj\Debug\Connect4.GameWindow.resources
