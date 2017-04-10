@@ -11,7 +11,8 @@ namespace Connect4
             int rowLength = ejimai.GetLength(0);
             int colLength = ejimai.GetLength(1);
 
-            CheckHorizontal(ejimai,rowLength, colLength);
+            CheckHorizontal(ejimai, rowLength, colLength);
+            //CheckVertical(ejimai, rowLength, colLength);
             
 
         }
@@ -34,19 +35,37 @@ namespace Connect4
                     
                 }
                 //MessageBox.Show(eilute);
-                Helpers.Check4inARow(eilute);
+                if(Helpers.Check4inARow(eilute,"R") || Helpers.Check4inARow(eilute, "G"))
+                {
+                    MessageBox.Show("realiai veikia");
+                }
+                
 
             }
         }
 
-        private static void CheckVertical(int colindex, string[,] ejimai, string color)
+        private static void CheckVertical(string[,] ejimai, int rowCount, int colCount)
         {
-            for (int a = 0; a < 6; a++)
+             string eilute = "";
+            for (int i = 0; i < colCount; i++)
             {
-                MessageBox.Show(ejimai[a, colindex]);
-            }
+                eilute = "";
+                for (int j = 0; j < rowCount; j++)
+                {
+                    if (string.IsNullOrEmpty(ejimai[j, i]))
+                    {
+                        eilute += "*";
+                    }
+                    else
+                    {
+                        eilute += ejimai[j, i];
+                    }
+                    
+                }
+                MessageBox.Show(eilute);
+                //Helpers.Check4inARow(eilute);
 
-            //ejimai[kintamasis,colindex];
+            }
         }
     }
 }
