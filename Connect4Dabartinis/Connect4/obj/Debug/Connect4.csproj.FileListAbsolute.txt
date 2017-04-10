@@ -25,3 +25,12 @@ C:\Users\Žygimantas\Desktop\Connect4Dabartinis\Connect4\obj\Debug\Connect4.cspr
 C:\Users\Žygimantas\Desktop\Connect4Dabartinis\Connect4\obj\Debug\Connect4.exe
 C:\Users\Žygimantas\Desktop\Connect4Dabartinis\Connect4\obj\Debug\Connect4.pdb
 C:\Users\Žygimantas\Desktop\Connect4Dabartinis\Connect4\obj\Debug\Connect4.GameWindow.resources
+C:\Users\Žygimantas\Desktop\Paskaitos\Connect4Git\Connect4\Connect4Dabartinis\Connect4\bin\Debug\Connect4.exe.config
+C:\Users\Žygimantas\Desktop\Paskaitos\Connect4Git\Connect4\Connect4Dabartinis\Connect4\bin\Debug\Connect4.exe
+C:\Users\Žygimantas\Desktop\Paskaitos\Connect4Git\Connect4\Connect4Dabartinis\Connect4\bin\Debug\Connect4.pdb
+C:\Users\Žygimantas\Desktop\Paskaitos\Connect4Git\Connect4\Connect4Dabartinis\Connect4\obj\Debug\Connect4.csprojResolveAssemblyReference.cache
+C:\Users\Žygimantas\Desktop\Paskaitos\Connect4Git\Connect4\Connect4Dabartinis\Connect4\obj\Debug\Connect4.GameWindow.resources
+C:\Users\Žygimantas\Desktop\Paskaitos\Connect4Git\Connect4\Connect4Dabartinis\Connect4\obj\Debug\Connect4.Properties.Resources.resources
+C:\Users\Žygimantas\Desktop\Paskaitos\Connect4Git\Connect4\Connect4Dabartinis\Connect4\obj\Debug\Connect4.csproj.GenerateResource.Cache
+C:\Users\Žygimantas\Desktop\Paskaitos\Connect4Git\Connect4\Connect4Dabartinis\Connect4\obj\Debug\Connect4.exe
+C:\Users\Žygimantas\Desktop\Paskaitos\Connect4Git\Connect4\Connect4Dabartinis\Connect4\obj\Debug\Connect4.pdb

@@ -6,53 +6,35 @@ namespace Connect4
     {
 
         public static void CheckForVictory(string[,] ejimai)
-        {
-            //int reds = 0;
-            //int yellows = 0;
-
+        { 
+                        
             int rowLength = ejimai.GetLength(0);
             int colLength = ejimai.GetLength(1);
 
-            for (int i = 0; i < rowLength; i++)
-            {
-                for (int j = 0; j < colLength; j++)
-                {
-                    if (ejimai[i, j] == "G")
-                    {
-
-
-                    }
-                    else if (ejimai[i, j] == "R")
-                    {
-
-                    }
-                }
-                //MessageBox.Show(ejimai[i,0]);
-
-            }
-            //MessageBox.Show($"Raudoni {reds} Geltoni {yellows}");
+            CheckHorizontal(ejimai,rowLength, colLength);
+            
 
         }
-        private static void CheckHorizontal(int rowindex, string[,] ejimai, string color)
+        private static void CheckHorizontal(string[,] ejimai,int rowCount,int colCount)
         {
-            int rowLength = ejimai.GetLength(0);
-            int colLength = ejimai.GetLength(1);
-
-            for (int i = 0; i < rowLength; i++)
+            string eilute = "";
+            for (int i = 0; i < rowCount; i++)
             {
-                for (int j = 0; j < colLength; j++)
+                eilute = "";
+                for (int j = 0; j < colCount; j++)
                 {
-
-                    MessageBox.Show(ejimai[i, j]);
-                    //if (string.IsNullOrEmpty(ejimai[i, j]))
-                    //{
-
-                    //}
-                    //else
-                    //{
-
-                    //}
+                    if (string.IsNullOrEmpty(ejimai[i, j]))
+                    {
+                        eilute += "*";
+                    }
+                    else
+                    {
+                        eilute += ejimai[i, j];
+                    }
+                    
                 }
+                //MessageBox.Show(eilute);
+                Helpers.Check4inARow(eilute);
 
             }
         }
