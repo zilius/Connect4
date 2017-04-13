@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Connect4.Models;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace Connect4
@@ -14,12 +14,26 @@ namespace Connect4
             InitializeComponent();
         }
 
+        int gameId;
 
-        string[,] ejimai = new string[8, 7];
-
+        int ejimas = 1;
+                
         List<List<Button>> _mygtukai = new List<List<Button>>();
-        
-        private void GameWindow_Load(object sender, EventArgs e)
+
+        List<Ejimai> _ejimai = new List<Ejimai>();
+
+        string[,] VisiEjimai = new string[8, 7];
+            
+        bool gameOn = true;
+
+        DataBaseWriter writer = new DataBaseWriter();
+
+        Game zaidimas = new Game();
+
+        List<Ejimai> _enemyTurns = new List<Ejimai>();
+
+
+        private void SetUpGame(object sender, EventArgs e)
         {
       
             for (int i = 0; i < 7; i++)
@@ -41,6 +55,7 @@ namespace Connect4
                     
                     
                 }
+               
             }
             
             foreach (var sublist in _mygtukai)
@@ -53,10 +68,13 @@ namespace Connect4
                     }
                 }
             }
+
+            gameId = writer.WriteGameAndGetId(zaidimas); // irasomas zaidimas ir jo id
+                    
             
         }
 
-        private void Button_Click(object sender, EventArgs e)
+        private void Button_Click(object sender, EventArgs e)//Gameloop
         {
                                   
             var btn = (Button)sender;
@@ -64,72 +82,135 @@ namespace Connect4
             int cell = (int)char.GetNumericValue(tag[0]);
             PlayerTurn(cell);
             CpuTurn();
-            GameRules.CheckForVictory(ejimai);
+
+            if (GameRules.HaveAWinner(VisiEjimai))
+            {
+                MessageBox.Show("Gg");
+                gameOn = false;
+            }
+            if(gameOn == false)
+            {
+                writer.WriteData(_ejimai);
+
+                panel1.Enabled = false;
+                
+            }
+
+            
         }
 
         private void PlayerTurn(int cell)
         {
             
-            try
+            int lenght = _mygtukai[cell - 1].Count;
+
+            if(lenght == _mygtukai[cell-1].Count)
             {
-                int lenght = _mygtukai[cell - 1].Count;
-
-                var btnTochange = _mygtukai[cell - 1][lenght - 1];
-
-                btnTochange.BackColor = Color.Brown;
-
-                ProcessTurn(cell, lenght, "R");
-
-
-
+                _mygtukai[cell - 1][lenght-1].Enabled = false;
             }
-            catch (Exception)
-            {
-                MessageBox.Show("Cell full");
-            }
+                      
+            var btnTochange = _mygtukai[cell - 1][lenght - 1];
+
+            btnTochange.BackColor = Color.Brown;
+
+            ProcessTurn(cell, lenght, "R");
+                         
              
         }
 
         private void CpuTurn()
         {
-            var rnd = new Random();
-            var cell = rnd.Next(1, 7); 
+            int cell;
 
-            try
+            //Jeigu crashins tada reikes randomizinti ir atjungti db
+
+            if(writer.GetBestMove(ejimas) == null)
             {
-                int lenght = _mygtukai[cell - 1].Count;
-
-                var btnTochange = _mygtukai[cell - 1][lenght - 1];
-
-                btnTochange.BackColor = Color.Yellow;
-
-                ProcessTurn(cell, lenght, "G");
-                                                
+                var rnd = new Random();
+                cell = rnd.Next(1, 8);
             }
-            catch (Exception)
+            else
             {
-                MessageBox.Show("Cell full");
+                try
+                {
+                    cell = writer.GetBestMove(ejimas)[0].EjimasX;
+                }
+                catch
+                {
+                    var rnd = new Random();
+                    cell = rnd.Next(1, 8);
+                }
             }
+            
+            //back here
+                
+
+            int lenght = _mygtukai[cell - 1].Count;
+
+
+            while (lenght == 0/*(lenght +1 == _mygtukai[cell].Count)*/)
+            {
+                cell = new Random().Next(1, 8);
+                lenght = _mygtukai[cell - 1].Count;
+            }
+            //MessageBox.Show($"X: cell {cell}, Y: lenght {lenght}");
+
+            var btnTochange = _mygtukai[cell - 1][lenght - 1];
+
+            if (btnTochange == _mygtukai[cell - 1][_mygtukai[cell - 1].Count - 1])
+            {
+                btnTochange.Enabled = false; // kad useris nepaspaustu
+            }
+
+            btnTochange.BackColor = Color.Yellow;
+
+            ProcessTurn(cell, lenght, "G");
+
+            _ejimai.Add(new Ejimai
+            {
+                GameId = gameId,
+                EjimoNr = ejimas,
+                EjimasX = cell
+            });
+            
+            
+        ejimas++;
+
+        //try
+        //{
+        //    int lenght = _mygtukai[cell - 1].Count;
+
+        //    var btnTochange = _mygtukai[cell - 1][lenght - 1];
+
+        //    btnTochange.BackColor = Color.Yellow;
+
+        //    ProcessTurn(cell, lenght, "G");
+
+        //}
+        //catch (Exception)
+        //{
+        //    MessageBox.Show("Cell full");
+        //}
         }
 
         private void LogEjimai()
         {
             textBox1.Text = "";//09632224
 
-            int rowLength = ejimai.GetLength(0);
-            int colLength = ejimai.GetLength(1);
+            int rowLength = VisiEjimai.GetLength(0);
+            int colLength = VisiEjimai.GetLength(1);
 
             for(int i = 0; i<rowLength; i++)
             {
                 for(int j = 0; j< colLength;j++)
                 {
-                    if(string.IsNullOrEmpty(ejimai[i, j]))
+                    if(string.IsNullOrEmpty(VisiEjimai[i, j]))
                     {
                         textBox1.Text += "0";
                     }
                     else
                     {
-                        textBox1.Text += ejimai[i,j];
+                        textBox1.Text += VisiEjimai[i,j];
                     }
                 }
                 textBox1.Text += Environment.NewLine;
@@ -145,8 +226,9 @@ namespace Connect4
         {
             _mygtukai[cell - 1].RemoveAt(lenght - 1);
 
-            ejimai[lenght - 1, cell - 1] = color;
+            VisiEjimai[lenght - 1, cell - 1] = color;
         }
+              
 
         
     }

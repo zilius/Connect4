@@ -1,22 +1,21 @@
-﻿using System.Windows.Forms;
-
-namespace Connect4
+﻿namespace Connect4
 {
     public static class GameRules
     {
-
-        public static void CheckForVictory(string[,] ejimai)
-        { 
-                        
+        public static bool HaveAWinner(string[,] ejimai)
+        {                  
             int rowLength = ejimai.GetLength(0);
             int colLength = ejimai.GetLength(1);
 
-            CheckHorizontal(ejimai, rowLength, colLength);
-            //CheckVertical(ejimai, rowLength, colLength);
+            if(CheckHorizontal(ejimai, rowLength, colLength) != "*" || CheckVertical(ejimai, rowLength, colLength) != "*")
+            {
+                return true;
+            }
+            return false;
             
-
         }
-        private static void CheckHorizontal(string[,] ejimai,int rowCount,int colCount)
+
+        private static string CheckHorizontal(string[,] ejimai,int rowCount,int colCount)
         {
             string eilute = "";
             for (int i = 0; i < rowCount; i++)
@@ -32,21 +31,26 @@ namespace Connect4
                     {
                         eilute += ejimai[i, j];
                     }
-                    
-                }
-                //MessageBox.Show(eilute);
-                if(Helpers.Check4inARow(eilute,"R") || Helpers.Check4inARow(eilute, "G"))
-                {
-                    MessageBox.Show("realiai veikia");
-                }
-                
 
+                }
+                //MessageBox.Show($"{eilute} eilute");
+                if (Helpers.Check4inARow(eilute, "G"))
+                {
+                    return "R";
+                }
+                else if (Helpers.Check4inARow(eilute, "R"))
+                {
+                    return "R";
+                }
+               
             }
+            return "*";
+
         }
 
-        private static void CheckVertical(string[,] ejimai, int rowCount, int colCount)
+        private static string CheckVertical(string[,] ejimai, int rowCount, int colCount) //po viena karta kviecia
         {
-             string eilute = "";
+            string eilute = "";
             for (int i = 0; i < colCount; i++)
             {
                 eilute = "";
@@ -60,13 +64,23 @@ namespace Connect4
                     {
                         eilute += ejimai[j, i];
                     }
-                    
+              
                 }
-                MessageBox.Show(eilute);
-                //Helpers.Check4inARow(eilute);
-
+                //MessageBox.Show($"{eilute} stulpelis");
+                if (Helpers.Check4inARow(eilute, "R"))
+                {
+                    return "R";
+                }
+                else if (Helpers.Check4inARow(eilute, "G"))
+                {
+                    return "G";
+                }
+               
             }
+            return "*";
+
         }
+        
     }
 }
 

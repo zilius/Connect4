@@ -34,3 +34,5 @@ C:\Users\Žygimantas\Desktop\Paskaitos\Connect4Git\Connect4\Connect4Dabartinis\C
 C:\Users\Žygimantas\Desktop\Paskaitos\Connect4Git\Connect4\Connect4Dabartinis\Connect4\obj\Debug\Connect4.csproj.GenerateResource.Cache
 C:\Users\Žygimantas\Desktop\Paskaitos\Connect4Git\Connect4\Connect4Dabartinis\Connect4\obj\Debug\Connect4.exe
 C:\Users\Žygimantas\Desktop\Paskaitos\Connect4Git\Connect4\Connect4Dabartinis\Connect4\obj\Debug\Connect4.pdb
+C:\Users\Žygimantas\Desktop\Paskaitos\Connect4Git\Connect4\Connect4Dabartinis\Connect4\bin\Debug\Dapper.dll
+C:\Users\Žygimantas\Desktop\Paskaitos\Connect4Git\Connect4\Connect4Dabartinis\Connect4\bin\Debug\Dapper.xml

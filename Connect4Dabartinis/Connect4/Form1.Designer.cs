@@ -73,7 +73,7 @@
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Connect4";
-            this.Load += new System.EventHandler(this.GameWindow_Load);
+            this.Load += new System.EventHandler(this.SetUpGame);
             this.ResumeLayout(false);
             this.PerformLayout();
 
