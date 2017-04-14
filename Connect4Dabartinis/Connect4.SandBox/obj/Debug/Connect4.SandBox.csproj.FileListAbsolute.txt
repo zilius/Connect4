@@ -1,0 +1,6 @@
+C:\Users\Žygimantas\Desktop\Paskaitos\Connect4Git\Connect4\Connect4Dabartinis\Connect4.SandBox\obj\Debug\Connect4.SandBox.csprojResolveAssemblyReference.cache
+C:\Users\Žygimantas\Desktop\Paskaitos\Connect4Git\Connect4\Connect4Dabartinis\Connect4.SandBox\bin\Debug\Connect4.SandBox.exe.config
+C:\Users\Žygimantas\Desktop\Paskaitos\Connect4Git\Connect4\Connect4Dabartinis\Connect4.SandBox\bin\Debug\Connect4.SandBox.exe
+C:\Users\Žygimantas\Desktop\Paskaitos\Connect4Git\Connect4\Connect4Dabartinis\Connect4.SandBox\bin\Debug\Connect4.SandBox.pdb
+C:\Users\Žygimantas\Desktop\Paskaitos\Connect4Git\Connect4\Connect4Dabartinis\Connect4.SandBox\obj\Debug\Connect4.SandBox.exe
+C:\Users\Žygimantas\Desktop\Paskaitos\Connect4Git\Connect4\Connect4Dabartinis\Connect4.SandBox\obj\Debug\Connect4.SandBox.pdb
