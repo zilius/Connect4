@@ -9,7 +9,7 @@ namespace Connect4
 {
     public class DataBaseWriter
     {
-        private readonly string _connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Žygimantas\Desktop\Paskaitos\Connect4Git\Connect4\Connect4Dabartinis\Connect4\Database1.mdf;Integrated Security=True";
+        private readonly string _connectionString = @"LOL";
 
         private int _gameId;
 
